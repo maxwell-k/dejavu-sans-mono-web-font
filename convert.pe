@@ -1,0 +1,4 @@
+#!/usr/bin/fontforge
+# based upon https://fontforge.github.io/scripting-tutorial.html
+Open($1)
+Generate($1:r + ".woff")
