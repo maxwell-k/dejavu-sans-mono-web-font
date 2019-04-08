@@ -17,20 +17,21 @@ For license information, see [`LICENSE`](./LICENSE).
 
 As of 7 April 2019, the [latest release] is 2.37
 
-To download '.ttf' files and create '.woff' files, run the following steps on
-Alpine Linux:
+To download the '.ttf' files and create the '.woff' files, run the following
+shell script on Alpine Linux in a checkout of this repository:
 
 ```
-releases=https://github.com/dejavu-fonts/dejavu-fonts/releases
-curl -OL "$releases/download/version_2_37/dejavu-fonts-ttf-2.37.tar.bz2"
-unset releases
-tar xvf dejavu-fonts-ttf-2.37.tar.bz2
-cp dejavu-fonts-ttf-2.37/ttf/DejaVuSansMono*.ttf .
-git clean -f -d
+releases=https://github.com/dejavu-fonts/dejavu-fonts/releases &&
+curl -OL "$releases/download/version_2_37/dejavu-fonts-ttf-2.37.tar.bz2" &&
+unset releases &&
+tar xf dejavu-fonts-ttf-2.37.tar.bz2 &&
+cp dejavu-fonts-ttf-2.37/ttf/DejaVuSansMono*.ttf . &&
 
-sudo apk add fontforge@edge-testing
-for i in *.ttf ; do ./convert.pe "$i" ; done
-sudo apk del fontforge
+sudo apk add --quiet fontforge@edge-testing &&
+for i in *.ttf ; do ./convert.pe "$i" ; done &&
+sudo apk del fontforge &&
+
+git clean -f -d
 ```
 
 [latest release]: https://github.com/dejavu-fonts/dejavu-fonts/releases
