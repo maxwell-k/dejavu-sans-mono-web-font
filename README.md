@@ -20,6 +20,8 @@ focuses on four
 - DejaVu Sans Mono Bold Oblique
 - DejaVu Sans Mono Oblique
 
+## Creating the web fonts
+
 To download the '.ttf' files and create the '.woff' files, run the following
 shell script on Alpine Linux in a checkout of this repository:
 
