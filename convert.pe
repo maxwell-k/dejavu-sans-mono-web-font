@@ -1,4 +1,5 @@
 #!/usr/bin/fontforge
-# based upon https://fontforge.github.io/scripting-tutorial.html
+# based upon https://fontforge.org/docs/tutorial/scripting-tutorial.html
 Open($1)
 Generate($1:r + ".woff")
+Generate($1:r + ".woff2")
